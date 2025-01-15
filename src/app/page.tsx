@@ -5,7 +5,7 @@ function page() {
   return (
     <>
     <section>
-      <Login />
+      <Home />
     </section>
     </>
   )
