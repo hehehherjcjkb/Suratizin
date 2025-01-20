@@ -2,11 +2,15 @@ import React from 'react'
 import Image from 'next/image';
 import { CiSearch } from "react-icons/ci";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { IoPersonOutline } from "react-icons/io5";
+import { GrFormNext } from "react-icons/gr";
 
 function Home
 () {
   return (
     <>
+
+      
       <div className="bg-white w-screen h-screen fixed">
         <Image
           src="/assets/logo/logo2.png"
@@ -74,14 +78,40 @@ function Home
           </div>
         </div>
 
-        <div className="space-y-2 mx-32">
-          <div className="bg-[#950101] bg-opacity-100 w-[439px] h-[44px] mt-32 rounded-lg"></div>
-          <div className="bg-[#950101] bg-opacity-100 w-[439px] h-[44px] mt-32 rounded-lg "></div>
-          <div className="bg-[#950101] bg-opacity-100 w-[439px] h-[44px] mt-32 rounded-lg"></div>
+      
+        <div className="space-y-1 p-4 mx-24 my-20">
+          <div className="flex items-center justify-between bg-[#950101] text-white w-[439px] h-[44px] rounded-lg ">
+            <IoPersonOutline className="text-xl ml-3" />
+            <div className="flex-1 ml-5">
+              <p className="text-xs font-normal">Mufida Erisah | XI RPL 4</p>
+              <p className="text-xs">Pengajuan Izin Pulang</p>
+            </div>
+            <GrFormNext className="text-xl"></GrFormNext>
+          </div>
+
+          <div className="flex items-center justify-between bg-[#950101] text-white w-[439px] h-[44px] rounded-lg ">
+            <IoPersonOutline className="text-xl ml-3" />
+            <div className="flex-1 ml-5">
+              <p className="text-xs font-normal">
+                Maesa Diandra Shyafril | XI RPL 4
+              </p>
+              <p className="text-xs">Pengajuan Izin Keluar</p>
+            </div>
+            <GrFormNext className="text-xl"></GrFormNext>
+          </div>
+
+          <div className="flex items-center justify-between bg-[#950101] text-white w-[439px] h-[44px] rounded-lg ">
+            <IoPersonOutline className="text-xl ml-3" />
+            <div className="flex-1 ml-5">
+              <p className="text-xs font-normal">Munirah Janna | XI RPL 4</p>
+              <p className="text-xs">Pengajuan Izin Pulang</p>
+            </div>
+          <GrFormNext className="text-xl"></GrFormNext>
+          </div>
         </div>
 
-        <div className="bg-[#999999] bg-opacity-15 h-[627px] w-[327px] mx-[1210px] my-[-450px] rounded-3xl py-14 px-3 ">
-          <div className='space-y-7'>
+        <div className="bg-[#999999] bg-opacity-15 h-[627px] w-[327px] mx-[1210px] my-[-510px] rounded-3xl py-14 px-3 ">
+          <div className="space-y-7">
             <div>
               <form className="relative">
                 <CiSearch className="absolute left-14 top-1/3 text-white"></CiSearch>
