@@ -31,7 +31,7 @@ function Home
             November 2024
           </div>
 
-          <div className="flex justify-between items-center gap-4 mt-3">
+          <div className="flex justify-between items-center gap-4 mt-3 mx-7">
             <div className="text-white text-base  w-[40px]">SEN</div>
             <div className="text-white text-base  w-[40px]">SEL</div>
             <div className="text-white text-base  w-[40px]">RAB</div>
@@ -44,35 +44,35 @@ function Home
             <div className="text-white text-base  w-[40px]">RAB</div>
           </div>
 
-          <div className="flex justify-between -space-x mt-4">
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px] bg-black">
+          <div className="flex justify-between items-center mt-4 gap-4 mx-6 gap-x-2">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px] bg-black">
               4
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               5
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               6
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               7
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               8
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               9
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               10
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               11
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               12
             </div>
-            <div className="text-white text-2xl rounded-lg px-4 py-2  w-[40px]">
+            <div className="text-white text-2xl rounded-lg  py-2  w-[40px]">
               13
             </div>
           </div>
