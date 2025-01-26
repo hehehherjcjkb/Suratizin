@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from '@/components/Home'
+import Login from '@/app/components/Login'
 function page() {
   return (
     <>
     <section>
-      <Home />
+      <Login />
     </section>
     </>
   )
