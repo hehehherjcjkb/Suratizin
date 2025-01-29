@@ -134,7 +134,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="bg-[#999999] bg-opacity-15 h-[627px] w-[327px] mx-[1210px] my-[-510px] rounded-3xl py-14 px-3 ">
+        <div className="bg-[#999999] bg-opacity-15 h-[627px] w-[327px] ml-auto my-[-510px] rounded-3xl py-14 px-3 ">
           <div className="space-y-7">
             <div>
               <form className="relative">

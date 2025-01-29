@@ -20,7 +20,7 @@ function page() {
 
         <div className="my-[-35px] border-t-2 border-black w-screen"></div>
 
-        <div className="flex justify-center mr-[100px] my-32 gap-4">
+        <div className="flex justify-center my-32 gap-4">
           <Image
             src="/assets/logo/surat.png"
             alt="surat"
@@ -35,42 +35,44 @@ function page() {
           </div>
         </div>
 
-        <div>
-          <h2 className="text-black text-base">Pengajuan</h2>
+        <div className="flex flex-col items-center mt-[-50px]">
+
+          <div className='gap-3 flex flex-col'>
+            <h2 className="text-black text-base">Pengajuan</h2>
+
+            <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
+              <div className="flex justify-between items-center gap-[560px]">
+                <div className="flex flex-row gap-5 pl-5">
+                  <MdOutlineSick className="w-[27px] h-[28px] text-gray-700"></MdOutlineSick>
+                  <h3>Surat sakit</h3>
+                </div>
+                <GrFormNext className="text-2xl"></GrFormNext>
+              </div>
+            </div>
+
+            <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
+              <div className="flex justify-between items-center gap-[550px]">
+                <div className="flex flex-row gap-5 pl-5">
+                  <IoIosLogOut className="w-[27px] h-[28px] text-gray-700"></IoIosLogOut>
+                  <h3>Surat keluar</h3>
+                </div>
+                <GrFormNext className="text-2xl"></GrFormNext>
+              </div>
+            </div>
+
+            <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
+              <div className="flex justify-between items-center gap-[543px]">
+                <div className="flex flex-row gap-5 pl-5">
+                  <GoHome className="w-[27px] h-[28px] text-gray-700"></GoHome>
+                  <h3>Surat pulang</h3>
+                </div>
+                <GrFormNext className="text-2xl"></GrFormNext>
+              </div>
+            </div>
+          </div>
+          
         </div>
-
-        <div className="flex flex-col items-center gap-4 mt-[-40px]">
-
-          <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
-            <div className='flex justify-between items-center gap-[560px]'>
-              <div className='flex flex-row gap-5 pl-5'>
-                <MdOutlineSick className="w-[27px] h-[28px] text-gray-700"></MdOutlineSick>
-                <h3>Surat sakit</h3>
-              </div>
-              <GrFormNext className='text-2xl'></GrFormNext>
-            </div>
-          </div>
-          <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
-            <div className='flex justify-between items-center gap-[560px]'>
-              <div className='flex flex-row gap-5 pl-5'>
-                <IoIosLogOut className="w-[27px] h-[28px] text-gray-700"></IoIosLogOut>
-                <h3>Surat keluar</h3>
-              </div>
-              <GrFormNext className='text-2xl'></GrFormNext>
-            </div>
-          </div>
-          <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
-            <div className='flex justify-between items-center gap-[560px]'>
-              <div className='flex flex-row gap-5 pl-5'>
-                <GoHome className="w-[27px] h-[28px] text-gray-700"></GoHome>
-                <h3>Surat pulang</h3>
-              </div>
-              <GrFormNext className='text-2xl'></GrFormNext>
-            </div>
-          </div>
-
-        </div>
-
+        
       </div>
     </>
   );
