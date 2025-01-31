@@ -11,12 +11,18 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+<<<<<<< HEAD
         primary: "#f8fafc",
         secondary: "#b91c1c",
+=======
+>>>>>>> fb3bfc07ec47d6b6163842852bc401c9904a902d
       },
     },
   },
   plugins: [],
 } satisfies Config;
+<<<<<<< HEAD
 
 // note css
+=======
+>>>>>>> fb3bfc07ec47d6b6163842852bc401c9904a902d
