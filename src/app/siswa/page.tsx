@@ -1,10 +1,16 @@
+"use client";
 import React from 'react'
 import Image from 'next/image'
 import { MdOutlineSick } from "react-icons/md";
 import { GrFormNext } from "react-icons/gr";
 import { GoHome } from "react-icons/go";
 import { IoIosLogOut } from "react-icons/io";
+import { useRouter } from 'next/navigation';
 function page() {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/pengajuan")
+  };
   return (
     <>
       <div className="bg-white w-screen h-screen fixed">
@@ -35,12 +41,13 @@ function page() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center mt-[-50px]">
+        <div className="flex flex-col items-center mt-[-70px]">
 
-          <div className='gap-3 flex flex-col'>
+          <div className='gap-3 flex flex-col mb-24'>
             <h2 className="text-black text-base">Pengajuan</h2>
 
-            <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
+            <button onClick={handleClick} 
+            className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
               <div className="flex justify-between items-center gap-[560px]">
                 <div className="flex flex-row gap-5 pl-5">
                   <MdOutlineSick className="w-[27px] h-[28px] text-gray-700"></MdOutlineSick>
@@ -48,7 +55,7 @@ function page() {
                 </div>
                 <GrFormNext className="text-2xl"></GrFormNext>
               </div>
-            </div>
+            </button>
 
             <div className="border border-black w-[737px] h-[69px] rounded-lg flex items-center">
               <div className="flex justify-between items-center gap-[550px]">

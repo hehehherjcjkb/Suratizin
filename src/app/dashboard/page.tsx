@@ -1,11 +1,17 @@
-import React from "react";
+"use client";
 import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoPersonOutline } from "react-icons/io5";
 import { GrFormNext } from "react-icons/gr";
+import { useRouter } from "next/navigation";
 
 function Home() {
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/riwayat_baru")
+  };
+
   return (
     <>
       <div className="bg-white w-screen h-screen fixed">
@@ -149,10 +155,10 @@ function Home() {
               </form>
             </div>
 
-            <div className="bg-[#D9D9D9] bg-opacity-100 w-[133px] h-[50px] rounded-lg border-2 border-black mx-[90px] my-16">
+            <button onClick={handleClick} className="bg-[#D9D9D9] bg-opacity-100 w-[133px] h-[50px] rounded-lg border-2 border-black mx-[90px] my-16">
               <div className="text-black font-sans mx-10 my-2">Riwayat</div>
               <IoMdNotificationsOutline className="ml-3 text-2xl mt-[-30px]"></IoMdNotificationsOutline>
-            </div>
+            </button>
 
             <h1 className="text-black flex justify-center my-16">
               Detail Novermber 2024
