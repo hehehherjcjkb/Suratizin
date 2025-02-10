@@ -2,15 +2,40 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
+
 function Page() {
+  const { login } = useAuth();
+  const [form, setForm] = React.useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = React.useState("");
   const router = useRouter();
-  const handleClick = () => {
-    console.log('login');
-    router.push("/dashboard")
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(""); // Reset error message
+    try {
+      await login(form);
+      router.push("/dashboard_baru");
+    } catch (error) {
+      setError(
+        error?.response?.data?.message || "Terjadi kesalahan, coba lagi."
+      );
+    }
+  };
+
   return (
     <div className="w-full h-screen bg-white md:flex md:flex-row-reverse overflow-hidden relative">
-      {/* Bagian Kanan - Gambar sebagai Background di HP */}
+      {/* Bagian Kanan - Gambar */}
       <div className="absolute inset-0 md:relative w-full h-full md:w-1/2">
         <Image
           src="/assets/logo/sekolah.png"
@@ -34,30 +59,34 @@ function Page() {
             <div className="border-t border-black w-24 md:w-32 h-0"></div>
           </div>
 
-          <div className="flex flex-col gap-5 mt-6 w-full">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col gap-2 mt-6 w-full"
+          >
             <input
+              name="email"
+              onChange={handleChange}
               type="text"
-              id="Username"
               className="bg-white px-5 py-2 border-2 border-gray-500 text-black rounded-lg w-full"
               placeholder="Username"
               required
             />
             <input
+              name="password"
+              onChange={handleChange}
               type="password"
-              id="Password"
-              className="bg-white px-5 py-2 border-2 border-gray-500 text-black rounded-lg w-full"
+              className="bg-white px-5 py-2 border-2 border-gray-500 text-black rounded-lg w-full mt-2"
               placeholder="Password"
               required
             />
-          </div>
-
-          <div className="mt-8 w-full">
+            {error && <p className="text-red-600 text-sm mt-2">{error}</p>}
             <button
-            onClick={handleClick}
-             className="w-full py-2 text-white bg-[#950101] rounded-2xl">
+              type="submit"
+              className="mt-8 w-full py-2 text-white bg-[#950101] rounded-2xl"
+            >
               Login
             </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

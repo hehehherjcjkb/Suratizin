@@ -2,16 +2,22 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { IoMdArrowBack } from "react-icons/io";
-import { FaRegSmile, FaGraduationCap } from "react-icons/fa";
+import { FaRegSmile } from "react-icons/fa";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const [selectedStatus, setSelectedStatus] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedStatus(e.target.value);
+
   };
+  const router = useRouter();
+  const handleClick = () => {
+    router.push("/proses");
+  }
 
   return (
     <div className="bg-white w-screen h-screen fixed">
@@ -31,8 +37,8 @@ export default function Page() {
         <div className="flex flex-col gap-2">
           <h1 className="text-black font-bold text-3xl">Detail Pengajuan</h1>
           <div className="bg-[#999999] rounded-xl bg-opacity-60 w-[841px] h-[52px] flex justify-center items-center relative">
-            <IoMdArrowBack className="absolute left-9" />
-            <p className="font-bold">Pengajuan Surat Izin Pulang</p>
+            <IoMdArrowBack onClick={handleClick} className="absolute left-9 text-xl" />
+            <p className="font-bold">Pengajuan Surat Izin</p>
           </div>
         </div>
       </div>
@@ -50,7 +56,7 @@ export default function Page() {
                 height={26}
               />
               <input
-                type="text"
+                type="number"
                 id="NIS"
                 className="bg-white border-2 border-[#4E4E4E] text-black rounded-xl w-[400px] h-[49px] pl-14"
                 placeholder="NIS"
@@ -74,7 +80,7 @@ export default function Page() {
           </form>
 
           {/* Status & Kelas dalam satu baris */}
-          <div className="flex justify-center gap-14">
+          <div className="flex gap-2 ">
             {/* Dropdown Status */}
             <div className="relative w-[170px]">
               <select
@@ -92,14 +98,42 @@ export default function Page() {
 
             {/* Input Kelas */}
             <div className="relative w-[170px]">
-              <FaGraduationCap className="absolute top-1/2 left-4 -translate-y-1/2 w-[25px] h-[23px] text-gray-600" />
-              <input
-                type="text"
-                id="Kelas"
-                className="bg-white border-2 border-[#4E4E4E] text-black rounded-xl w-full h-[45px] pl-14"
-                placeholder="Kelas"
-                required
-              />
+              <select
+                id="kelas"
+                value={selectedStatus}
+                onChange={handleChange}
+                className="bg-white border-2 border-[#4E4E4E] text-black rounded-xl w-[220px] h-[45px] pl-4"
+              >
+                <option value="">Kelas</option>
+
+                {/* KELAS 10 */}
+                <option value="X TKJ 1">X TKJ 1</option>
+                <option value="X TKJ 2">X TKJ 2</option>
+                <option value="X TKJ 3">X TKJ 3</option>
+                <option value="X TKJ 4">X TKJ 4</option>
+                <option value="X RPL 1">X RPL 1</option>
+                <option value="X RPL 2">X RPL 2</option>
+                <option value="X RPL 3">X RPL 3</option>
+                <option value="X RPL 4">X RPL 4</option>
+                <option value="X TEL 1">X TEL 1</option>
+                <option value="X TEL 2">X TEL 2</option>
+                <option value="X DBP 1">X DBP 1</option>
+                <option value="X DBP 2">X DBP 2</option>
+
+                {/* kelas 11 */}
+                <option value="XI TKJ 1">XI TKJ 1</option>
+                <option value="XI TKJ 2">XI TKJ 2</option>
+                <option value="XI TKJ 3">XI TKJ 3</option>
+                <option value="XI TKJ 4">XI TKJ 4</option>
+                <option value="XI TKJ 5">XI TKJ 5</option>
+                <option value="XI RPL 1">XI RPL 1</option>
+                <option value="XI RPL 2">XI RPL 2</option>
+                <option value="XI RPL 3">XI RPL 3</option>
+                <option value="XI RPL 4">XI RPL 4</option>
+                <option value="XI TEL 1">XI TEL 1</option>
+                <option value="XI TEL 2">XI TEL 2</option>
+                <option value="XI DBP 1">XI DBP 1</option>
+              </select>
             </div>
           </div>
 
@@ -107,7 +141,7 @@ export default function Page() {
             <div className="relative">
               <SlCalender className="absolute top-1/2 left-4 -translate-y-1/2 w-[25px] h-[23px] text-gray-600" />
               <input
-                type="text"
+                type="date"
                 id="Nama"
                 className="bg-white border-2 border-[#4E4E4E] text-black rounded-xl w-[400px] h-[49px] pl-14"
                 placeholder="Time and date"
@@ -123,7 +157,7 @@ export default function Page() {
               <input
                 type="text"
                 id="Keterangan"
-                className="bg-white border-2 border-[#4E4E4E] text-black rounded-lg w-[400px] h-[116px] pl-14"
+                className="bg-white border-2 border-[#4E4E4E] text-black rounded-lg w-[400px] h-[126px] pl-14"
                 placeholder="Keterangan"
                 required
               />
@@ -131,7 +165,9 @@ export default function Page() {
           </form>
 
           {/* Tombol Kirim */}
-          <button className="bg-[#950101] w-[110px] h-[40px] text-white font-medium rounded-xl text-sm">
+          <button
+          onClick={handleClick}
+          className="bg-[#950101] w-[110px] h-[40px] text-white font-medium rounded-xl text-sm">
             Kirim
           </button>
         </div>

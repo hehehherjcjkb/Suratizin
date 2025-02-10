@@ -1,11 +1,12 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { CiSearch } from "react-icons/ci";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoPersonOutline } from "react-icons/io5";
 import { GrFormNext } from "react-icons/gr";
 import { useRouter } from "next/navigation";
+import useAuthMiddleware from "@/hooks/auth";
 
 const dataPengajuan = {
   "2024-11-04": [
@@ -36,11 +37,15 @@ const isWeekend = (dateString) => {
   const dayOfWeek = date.getUTCDay();
   return dayOfWeek === 0 || dayOfWeek === 6;
 };
-
+import { useAuth } from "@/context/AuthContext";
 export default function Calendar() {
   const [selectedDate, setSelectedDate] = useState("2024-11-04");
   const router = useRouter();
+  const{user}=useAuth()
+  useEffect(()=>{
 
+  },[])
+  useAuthMiddleware()
   return (
     <div className="bg-white w-screen h-screen fixed">
       <Image
@@ -52,7 +57,7 @@ export default function Calendar() {
       />
       <div className="my-[-35px] border-t-2 border-black w-screen" />
       <h2 className="mx-[110px] my-[60px] text-lg font-normal">
-        DATA PENGAJUAN
+        DATA PENGAJUAN 
       </h2>
 
       <div className="mx-[110px] text-lg font-semibold mt-[-50px]">
