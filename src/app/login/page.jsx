@@ -25,7 +25,7 @@ function Page() {
     setError(""); // Reset error message
     try {
       await login(form);
-      router.push("/dashboard_baru");
+      // router.push("/dashboard_baru");
     } catch (error) {
       setError(
         error?.response?.data?.message || "Terjadi kesalahan, coba lagi."
@@ -48,7 +48,7 @@ function Page() {
       </div>
 
       {/* Bagian Kiri - Form Login */}
-      <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-4 relative z-10 h-full md:h-auto">
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-4 relative z-10 h-full md:h-auto mb-3">
         <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md md:bg-transparent md:shadow-none md:p-0">
           <h1 className="font-serif text-3xl md:text-4xl text-center">
             WELCOME STELKERS

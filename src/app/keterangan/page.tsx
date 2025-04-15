@@ -8,27 +8,18 @@ import { SlCalender } from "react-icons/sl";
 import { SlEnvolopeLetter } from "react-icons/sl";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { useRouter } from 'next/navigation';
+import Layout from '../component/layout/Layout';
 function page() {
   const router = useRouter();
   const handleClick = () => {
-    router.push("/riwayat_baru");
+    router.push("/dashboard_baru");
   };
   return (
     <>
       <div className="bg-white w-screen h-screen fixed">
-        <div className="flex items-center">
-          <Image
-            src="/assets/logo/logo2.png"
-            alt="telkom"
-            className="top-0 mx-[7px] mt-[-30px]"
-            width={120}
-            height={100}
-          ></Image>
-        </div>
+        <Layout>
 
-        <div className="my-[-35px] border-t-2 border-black w-screen"></div>
-
-        <div className="flex flex-col items-center mt-16">
+        <div className="flex flex-col items-center">
           <div className="flex flex-col gap-2">
             <h1 className="text-black font-bold text-3xl">Detail Pengajuan </h1>
             <div className="bg-[#999999] rounded-xl bg-opacity-60 w-[841px] h-[52px] flex justify-center items-center relative">
@@ -95,7 +86,7 @@ function page() {
 
             <form className="relative">
               <div className="relative">
-                <IoDocumentTextOutline className="absolute top-8 left-4 -translate-y-1/2 w-[25px] h-[23px] text-gray-600 " />
+                <IoDocumentTextOutline className="absolute top-14 left-4 -translate-y-1/2 w-[25px] h-[23px] text-gray-600 " />
                 <div className="bg-white border-2 border-[#4E4E4E] text-black rounded-lg w-[400px] h-[126px] pl-14 flex items-center text-sm">
                   Izin pulang dikarenakan ingin keluar kota dan harus bersiap -
                   siap
@@ -118,6 +109,8 @@ function page() {
             Ditangguhkan
           </button>
         </div>
+        </Layout>
+
       </div>
     </>
   );
